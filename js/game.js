@@ -26,10 +26,8 @@ const checkEndGame = () => {
     const disabledCards = document.querySelectorAll('.disabled-Card');
 
     if (disabledCards.length === 20) {
-        setTimeout(() => {
-
-        alert('Parabéns, você acertou tudo!');
-    }, 1000);
+        abreModal();
+       
     }
 }
 
@@ -112,3 +110,9 @@ const loadGame = () => {
 }
 
 loadGame();
+
+function abreModal(){
+    $("#myModal").modal({
+        show: true
+    });
+}

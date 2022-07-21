@@ -41,30 +41,12 @@
 }
 
 .disabled-Card {
-    /* filter: saturate(0); */
+     filter: saturate(0); 
     opacity: 0.5;
-    animation: morrendo 2s;
+    animation: fadein 5s  0s  forwards;
 }
 
-@keyframes morrendo {
-
-    0% {
-        filter: saturate(0);
-    }
-
-    40% {
-        filter: saturate(0.8);
-    }
-
-    50% {
-        filter: saturate(0.5);
-    }
-
-    60% {
-        filter: saturate(0.3);
-    }
-
-    100% {
-        filter: saturate(0);
-    }
+@keyframes fadein {
+    from { filter: saturate(1); opacity: 1;}
+    to   { filter: saturate(0); opacity: 0.5;}
 }
