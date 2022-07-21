@@ -31,7 +31,7 @@
     transform: rotateY(180deg);
 }
 
-.back- {
+.back {
     background-image: url(/images/back.png);
     backface-visibility: hidden;
 }
