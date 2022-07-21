@@ -1,4 +1,7 @@
+
+
 .login-form {
+    background-image: linear-gradient(#3fb7cb, #b3d9b2);
     align-items: center;
     display: flex;
     flex-direction: column;
@@ -19,15 +22,15 @@
 }
 
 .login__header h1 {
-    color: rgb(0, 105, 23);
+    color: #2c8f43;
     font-size: 2.6em;
 }
 
 .login__input {
-    background-color: rgba(0, 0, 0, 0.247);
-    border: 2.5px solid rgba(92, 91, 91, 0.822);
+    background-color: #ffb3b3;
+    border: 2.5px solid rgb(0, 0, 0);
     border-radius: 6px;
-    color: rgb(61, 61, 61);
+    color: rgb(0, 0, 0);
     font-size: 1.7em;
     margin-bottom: 15px;
     max-width: 300px;
@@ -37,7 +40,7 @@
 }
 
 .login__button {
-    background-color: rgb(30, 255, 0);
+    background-color: #89cf38;
     border-radius: 6px;
     color: black;
     cursor: pointer;

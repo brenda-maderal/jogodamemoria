@@ -10,11 +10,11 @@
 .card {
     aspect-ratio: 3/4;
     width: 100%;
-    background-color: rgb(145, 145, 145);
     border-radius: 6px;
     position: relative;
     transition: all 400ms ease;
     transform-style: preserve-3d;
+    transition: all 500ms ease;
 }
 
 .face {
@@ -31,11 +31,40 @@
     transform: rotateY(180deg);
 }
 
-.back {
+.back- {
     background-image: url(/images/back.png);
     backface-visibility: hidden;
 }
 
-.card:hover {
+.reveal-Card {
     transform: rotateY(180deg);
+}
+
+.disabled-Card {
+    /* filter: saturate(0); */
+    opacity: 0.5;
+    animation: morrendo 2s;
+}
+
+@keyframes morrendo {
+
+    0% {
+        filter: saturate(0);
+    }
+
+    40% {
+        filter: saturate(0.8);
+    }
+
+    50% {
+        filter: saturate(0.5);
+    }
+
+    60% {
+        filter: saturate(0.3);
+    }
+
+    100% {
+        filter: saturate(0);
+    }
 }
