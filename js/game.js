@@ -88,7 +88,7 @@ const createCard = (character) => {
     const back = createElement('div', 'face back');
 
 
-    front.style.backgroundImage = `url('../images/${character}.png')`;
+    front.style.backgroundImage = `url('../../images/${character}.png')`;
 
     card.appendChild(front);
     card.appendChild(back);
@@ -100,7 +100,7 @@ const createCard = (character) => {
 }
 
 const loadGame = () => {
-
+    startTimer(); 
     const duplicatecharacters = [...characters, ...characters];
 
 
@@ -113,7 +113,7 @@ const loadGame = () => {
 }
 
 const startTimer = () => {
-
+    $(".timer").html("00")
     this.loop = setInterval(() => {
         const correntTime = +timer.innerHTML;
         timer.innerHTML = correntTime + 1;
@@ -124,7 +124,6 @@ const startTimer = () => {
 window.onload = () => {
 
     spanPlayer.innerHTML = localStorage.getItem('player');
-    startTimer();
     loadGame();
 }
 
@@ -144,9 +143,7 @@ $("#btnreiniciar").on('click', function () {
     setTimeout(() => {
         $("#myModal").modal('hide')
         $(".grid").html("")
-        $(".timer").html("00")
         loadGame();
-        startTimer(); // tive que add isso
     }, 3000);
 
 })
