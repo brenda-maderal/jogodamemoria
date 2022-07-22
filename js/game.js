@@ -1,4 +1,6 @@
 const grid = document.querySelector('.grid');
+const spanPlayer = document.querySelector('.player');
+const timer = document.querySelector('.timer');
 
 const characters = [
     'beth',
@@ -26,15 +28,16 @@ const checkEndGame = () => {
     const disabledCards = document.querySelectorAll('.disabled-Card');
 
     if (disabledCards.length === 20) {
+        clearInterval(this.loop);
         abreModal();
-       
+
     }
 }
 
 const checkCards = () => {
     const firstCharacter = firstCard.getAttribute('data-character');
     const secondCharacter = secondCard.getAttribute('data-character');
-     
+
     if (firstCharacter === secondCharacter) {
 
         firstCard.firstChild.classList.add('disabled-Card');
@@ -109,10 +112,43 @@ const loadGame = () => {
     });
 }
 
-loadGame();
+const startTimer = () => {
 
-function abreModal(){
+    this.loop = setInterval(() => {
+        const correntTime = +timer.innerHTML;
+        timer.innerHTML = correntTime + 1;
+    }, 1000);
+
+}
+
+window.onload = () => {
+
+    spanPlayer.innerHTML = localStorage.getItem('player');
+    startTimer();
+    loadGame();
+}
+
+
+
+function abreModal() {
+    $("#myModal").removeClass('animate__rotateOut')
+    $("#myModal").addClass('animate__rotateIn')
     $("#myModal").modal({
         show: true
     });
 }
+
+$("#btnreiniciar").on('click', function () {
+    $("#myModal").removeClass('animate__rotateIn')
+    $("#myModal").addClass('animate__rotateOut')
+    setTimeout(() => {
+        $("#myModal").modal('hide')
+        $(".grid").html("")
+        $(".timer").html("00")
+        loadGame();
+        startTimer(); // tive que add isso
+    }, 3000);
+
+})
+
+
