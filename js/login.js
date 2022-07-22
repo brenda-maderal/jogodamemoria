@@ -53,4 +53,4 @@ setTimeout(() => {
     // setTimeout(() => {
     //     $("#logo").hide('fade')
     //}, 5000);
-}, 3000);c
+}, 3000);
