@@ -14,29 +14,11 @@ const handleSubmit = (event) => {
    event.preventDefault();
 
    localStorage.setItem('player', input.value);
-   window.location = '/html/pages/game.html';
+   window.location.href = '/html/pages/game.html';
 }
 
 input.addEventListener('input', validateInput);
 form.addEventListener('submit', handleSubmit);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 $("#celebro").addClass("animate__lightSpeedInLeft")
 setTimeout(() => {
