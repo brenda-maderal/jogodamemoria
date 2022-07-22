@@ -85,7 +85,7 @@ const createCard = (character) => {
 
     const card = createElement('div', 'card');
     const front = createElement('div', 'face front');
-    const back = createElement('div', 'face back');
+    const back = createElement('div', 'face momorizando back');
 
 
     front.style.backgroundImage = `url('../../images/${character}.png')`;
@@ -100,6 +100,10 @@ const createCard = (character) => {
 }
 
 const loadGame = () => {
+    // setTimeout(() => {
+    //     $(".momorizando").addClass("back")
+    // }, 5000);
+
     startTimer(); 
     const duplicatecharacters = [...characters, ...characters];
 

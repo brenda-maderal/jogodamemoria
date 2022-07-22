@@ -26,6 +26,10 @@ header {
     margin: 0 0 30px;
 }
 
+.timerTexto{
+    font-size: 30px !important;
+}
+
 .grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
